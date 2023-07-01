@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 import Head from 'next/head'
 import { Navbar } from '../ui';
+import Footer from '../footer/Footer';
 
 interface Props {
     children?: ReactNode;
@@ -9,18 +10,18 @@ interface Props {
     // el signo de interrogacion quiere decir que es opcional
     imageFullUrl?: string;
 }
-export const ExploraLayout:FC<Props> = ({ children, title, pageDescription, imageFullUrl}) => {
+export const ExploraLayout: FC<Props> = ({ children, title, pageDescription, imageFullUrl }) => {
     return (
         <>
             <Head>
-                <title>{ title }</title>
-                <meta name='description' content={ pageDescription } />
+                <title>{title}</title>
+                <meta name='description' content={pageDescription} />
 
-                <meta name='og:title' content={ title }/>
-                <meta name='og:description' content={ pageDescription }/>
+                <meta name='og:title' content={title} />
+                <meta name='og:description' content={pageDescription} />
                 {
                     imageFullUrl && (
-                        <meta name='og:image' content={ imageFullUrl } />
+                        <meta name='og:image' content={imageFullUrl} />
                     )
                 }
             </Head>
@@ -34,11 +35,11 @@ export const ExploraLayout:FC<Props> = ({ children, title, pageDescription, imag
                 // maxWidth: ' 1440px',
                 // padding: '0px 30px'
             }}>
-                { children }
+                {children}
             </main>
 
             <footer>
-
+                <Footer />
             </footer>
         </>
     )
