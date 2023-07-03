@@ -3,11 +3,12 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { ExploraLayout } from '@/components/layouts'
-import { Box, Button, Card, CardMedia, Grid, Typography } from '@mui/material'
+import { Box, Button, Card, CardMedia, FormControl, FormGroup, FormHelperText, Grid, Input, InputLabel, OutlinedInput, TextareaAutosize, Typography } from '@mui/material'
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import CallIcon from '@mui/icons-material/Call';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Label } from '@mui/icons-material'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -180,13 +181,39 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box sx={{ marginTop: 10 }}>
+      <Box sx={{ marginTop: 10, padding: 4 }}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
-            <Typography variant='h1'>Contáctanos</Typography>
-            <Typography>¿Estás interesado en nuestros servicios?
+          <Grid item sx={{ paddingRight: 15, }} xs={12} md={6} >
+            <Typography variant='h1' fontSize={50}>Contáctanos</Typography>
+            <Typography >¿Estás interesado en nuestros servicios?
               Escríbenos</Typography>
+            <form>
+              <Box sx={{ display: 'grid', gridTemplateColumns: 'auto 1fr', columnGap: '1rem', alignItems: 'center', gap: 2 }}>
+                <InputLabel htmlFor="nombre">Nombre:</InputLabel>
+                <FormControl>
+                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px' }} />
+                </FormControl>
 
+                <InputLabel htmlFor="nombre">E-mail:</InputLabel>
+                <FormControl>
+                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px' }} />
+                </FormControl>
+
+                <InputLabel htmlFor="nombre">Celular:</InputLabel>
+                <FormControl>
+                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px' }} />
+                </FormControl>
+
+                <InputLabel htmlFor="nombre">Mensaje:</InputLabel>
+                <FormControl>
+                  <TextareaAutosize id="nombre" minRows={3} style={{ borderRadius: '29px', padding: '20px' }} />
+                </FormControl>
+
+              </Box>
+              <Button type="submit" style={{ color: 'white', backgroundColor: 'orange', width: '100%' }}>
+                Enviar
+              </Button>
+            </form>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box sx={{ backgroundColor: '#2C2A64', borderRadius: 10, padding: 10, color: 'white' }}>
@@ -199,14 +226,14 @@ export default function Home() {
                 </Box>
               </Box>
               <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <MailOutlineIcon sx={{ marginRight: 2, fontSize: 32  }} />
+                <MailOutlineIcon sx={{ marginRight: 2, fontSize: 32 }} />
                 <Box>
                   <Typography>reservas1@peruexploring.pe</Typography>
                   <Typography>reservas2@peruexploring.pe</Typography>
                 </Box>
               </Box>
               <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <CallIcon sx={{ marginRight: 2 , fontSize: 32 }} />
+                <CallIcon sx={{ marginRight: 2, fontSize: 32 }} />
                 <Box>
                   <Typography>Reservas 1: +51 932 513 171 </Typography>
                   <Typography>Reservas 2: +51 974 581 054</Typography>
@@ -214,7 +241,7 @@ export default function Home() {
                 </Box>
               </Box>
               <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <LocationOnIcon sx={{ marginRight: 2 , fontSize: 32 }} />
+                <LocationOnIcon sx={{ marginRight: 2, fontSize: 32 }} />
                 <Box>
                   <Typography>Calle San Manuel 174, Urb. Santa </Typography>
                   <Typography>Luisa - Los Olivos (Lima, Perú)</Typography>

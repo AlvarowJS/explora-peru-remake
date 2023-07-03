@@ -30,7 +30,7 @@ export const Navbar = () => {
                         </Link>
                     </NextLink>
 
-                    <NextLink href='/circuitos' passHref legacyBehavior>
+                    <NextLink href='/circuito' passHref legacyBehavior>
                         <Link>
                             <Button>Circuitos</Button>
                         </Link>
