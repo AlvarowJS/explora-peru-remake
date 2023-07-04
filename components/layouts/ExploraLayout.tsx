@@ -1,7 +1,8 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, useState } from 'react'
 import Head from 'next/head'
-import { Navbar } from '../ui';
+import { Navbar, SideMenu } from '../ui';
 import Footer from '../footer/Footer';
+import { Button } from '@mui/material';
 
 interface Props {
     children?: ReactNode;
@@ -11,6 +12,8 @@ interface Props {
     imageFullUrl?: string;
 }
 export const ExploraLayout: FC<Props> = ({ children, title, pageDescription, imageFullUrl }) => {
+
+    const [menu, setMenu] = useState(false)
     return (
         <>
             <Head>
@@ -28,8 +31,12 @@ export const ExploraLayout: FC<Props> = ({ children, title, pageDescription, ima
 
             <nav>
                 <Navbar />
-            </nav>
 
+            </nav>
+            <SideMenu menu={menu} />
+            <Button>
+                Menu
+            </Button>
             <main style={{
                 margin: '80px auto',
                 // maxWidth: ' 1440px',

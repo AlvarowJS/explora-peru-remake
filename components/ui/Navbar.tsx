@@ -24,7 +24,7 @@ export const Navbar = () => {
                         </Link>
                     </NextLink>
 
-                    <NextLink href='/tours' passHref legacyBehavior>
+                    <NextLink href='/tour' passHref legacyBehavior>
                         <Link>
                             <Button>Tours</Button>
                         </Link>

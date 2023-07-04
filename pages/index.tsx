@@ -3,18 +3,66 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { ExploraLayout } from '@/components/layouts'
-import { Box, Button, Card, CardMedia, FormControl, FormGroup, FormHelperText, Grid, Input, InputLabel, OutlinedInput, TextareaAutosize, Typography } from '@mui/material'
+import { Box, Button, Card, CardMedia, FormControl, FormGroup, FormHelperText, Grid, Input, InputLabel, OutlinedInput, TextField, TextareaAutosize, Typography } from '@mui/material'
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import CallIcon from '@mui/icons-material/Call';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Label } from '@mui/icons-material'
 const inter = Inter({ subsets: ['latin'] })
+import { useForm } from 'react-hook-form';
+import axios from 'axios'
+const URL = 'http://127.0.0.1:8000/api/v1/contactenos';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const MySwal = withReactContent(Swal)
+
+interface FormData {
+  nombre: string;
+  email: string;
+  celular: string;
+  mensaje: string;
+}
 
 export default function Home() {
+
+  const handleDescargarProtegeme = () => {
+    window.open('./Responsable/afiche_esnna.pdf', '_blank');
+  };
+  const handleDescargarMincetur = () => {
+    window.open('./Responsable/CONSTANCIA MINCETUR PEX.pdf', '_blank');
+  };
+
   const intranet = () => {
     window.location.href = "https://agentes.peruexploring.pe/"
   }
+
+  const { handleSubmit, register, reset } = useForm<FormData>();
+
+  const defaultForm = {
+    nombre: '',
+    email: '',
+    celular: '',
+    mensaje: '',
+  }
+
+  const onSubmit = (data: FormData) => {
+    axios.post(URL, data)
+      .then(res => {
+        reset(defaultForm)
+        MySwal.fire({
+          icon: 'success',
+          title: 'Mensaje Enviado!',
+          text: 'Nos comunicaremos contigo enseguida :)',
+          customClass: {
+            confirmButton: 'btn btn-success'
+          }
+        })
+      })
+      .catch(err => console.log(err))
+
+  }
+
   return (
     <ExploraLayout title={'Perú Exploring - Home'} pageDescription={'Unete a nosotros y accede a las mejores ofertas de viaje!'}>
       <Box position="relative" width="100%">
@@ -139,7 +187,7 @@ export default function Home() {
                       backgroundColor: 'darkorange',
                     },
                   }}
-                    onClick={intranet}
+                    onClick={handleDescargarProtegeme}
 
                   >Ver mas</Button>
                 </Grid>
@@ -170,7 +218,7 @@ export default function Home() {
                       backgroundColor: 'darkorange',
                     },
                   }}
-                    onClick={intranet}
+                    onClick={handleDescargarMincetur}
 
                   >Ver mas</Button>
                 </Grid>
@@ -187,30 +235,38 @@ export default function Home() {
             <Typography variant='h1' fontSize={50}>Contáctanos</Typography>
             <Typography >¿Estás interesado en nuestros servicios?
               Escríbenos</Typography>
-            <form>
-              <Box sx={{ display: 'grid', gridTemplateColumns: 'auto 1fr', columnGap: '1rem', alignItems: 'center', gap: 2 }}>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Box sx={{ paddingTop: 4, display: 'grid', gridTemplateColumns: 'auto 1fr', columnGap: '1rem', alignItems: 'center', gap: 2 }}>
                 <InputLabel htmlFor="nombre">Nombre:</InputLabel>
                 <FormControl>
-                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px' }} />
+                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px', height: '35px', }} {...register('nombre')} />
                 </FormControl>
 
                 <InputLabel htmlFor="nombre">E-mail:</InputLabel>
                 <FormControl>
-                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px' }} />
+                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('email')} />
                 </FormControl>
 
                 <InputLabel htmlFor="nombre">Celular:</InputLabel>
                 <FormControl>
-                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px' }} />
+                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('celular')} />
                 </FormControl>
 
                 <InputLabel htmlFor="nombre">Mensaje:</InputLabel>
                 <FormControl>
-                  <TextareaAutosize id="nombre" minRows={3} style={{ borderRadius: '29px', padding: '20px' }} />
+                  {/* <TextareaAutosize id="nombre" minRows={3} style={{ borderRadius: '29px', padding: '20px' }} {...register('mensaje')} /> */}
+                  {/* <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px',height: '85px' }} {...register('mensaje')} /> */}
+                  <TextField
+                    multiline
+                    rows={3}
+                    variant="outlined"
+                    {...register('mensaje')}
+
+                  />
                 </FormControl>
 
               </Box>
-              <Button type="submit" style={{ color: 'white', backgroundColor: 'orange', width: '100%' }}>
+              <Button type="submit" style={{ color: 'white', backgroundColor: '#E89241', width: '100%' }}>
                 Enviar
               </Button>
             </form>
