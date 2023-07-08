@@ -1,9 +1,21 @@
+import React from 'react';
 import NextLink from 'next/link';
 import { AppBar, Box, Button, Link, Toolbar, Typography } from '@mui/material'
 import Image from 'next/image';
+import PersonIcon from '@mui/icons-material/Person';
+import MenuIcon from '@mui/icons-material/Menu';
+type Props = {
+    setMenu: (value: boolean) => void;
+    menu: boolean;
+};
 
-
-export const Navbar = () => {
+export const Navbar: React.FC<Props> = ({ setMenu, menu }) => {
+    const intranet = () => {        
+        window.open('https://agentes.peruexploring.pe/', '_blank');
+    }
+    const handleMenuToggle = () => {
+        setMenu(!menu); // Ejemplo de cómo actualizar el estado 'menu'
+    };
     return (
         <AppBar>
             <Toolbar>
@@ -53,8 +65,20 @@ export const Navbar = () => {
                         </Link>
                     </NextLink>
                 </Box>
+
                 <Box flex={1} />
+                <Box flex={1} />
+                <Box>
+                    <MenuIcon onClick={handleMenuToggle} sx={{ color: 'white', fontSize: 30 }} />
+                </Box>
+                <Box>
+                    <PersonIcon onClick={intranet} sx={{ color: 'white', fontSize: 30 }} />
+                </Box>
+
+
             </Toolbar>
+
+
         </AppBar>
     )
 }

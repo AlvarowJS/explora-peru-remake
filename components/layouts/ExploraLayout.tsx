@@ -30,13 +30,16 @@ export const ExploraLayout: FC<Props> = ({ children, title, pageDescription, ima
             </Head>
 
             <nav>
-                <Navbar />
-
+                <Navbar
+                    setMenu={setMenu}
+                    menu={menu}
+                />
             </nav>
-            <SideMenu menu={menu} />
-            <Button>
-                Menu
-            </Button>
+            <SideMenu
+                menu={menu}
+                setMenu={setMenu}
+            />
+
             <main style={{
                 margin: '80px auto',
                 // maxWidth: ' 1440px',

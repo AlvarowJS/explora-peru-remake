@@ -1,16 +1,26 @@
 import { Box, Divider, Drawer, IconButton, Input, InputAdornment, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from "@mui/material"
 import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, ConfirmationNumberOutlined, EscalatorWarningOutlined, FemaleOutlined, LoginOutlined, MaleOutlined, SearchOutlined, VpnKeyOutlined } from "@mui/icons-material"
+import React from 'react';
+
+type Props = {
+    menu: boolean;
+    setMenu: (value: boolean) => void;
+};
+
+export const SideMenu: React.FC<Props> = ({ menu, setMenu }) => {
+    const handleBackdropClick = () => {
+        setMenu(false);
+    };
 
 
-export const SideMenu = ({ menu }) => {
-    
-
-    
     return (
         <Drawer
-            open={false}
+            open={menu}
             anchor='right'
             sx={{ backdropFilter: 'blur(4px)', transition: 'all 0.5s ease-out' }}
+            ModalProps={{
+                onBackdropClick: handleBackdropClick,
+            }}
         >
             <Box sx={{ width: 250, paddingTop: 5 }}>
 
