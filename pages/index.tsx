@@ -68,10 +68,10 @@ export default function Home() {
       <Box position="relative" width="100%">
         <CardMedia
           component="img"
-          height="440"
+          height="600"
           image="/portada_home.png"
           alt="portada"
-
+          sx={{ filter: 'brightness(60%)' }}
         />
         <Box position="absolute" top="20%" left="10%" textAlign="left" color="white">
           <Typography variant="h1" sx={{ fontSize: 40 }}>Únete a nosotros y accede a las mejores

@@ -12,6 +12,8 @@ export const lightTheme = createTheme({
       main: '#3A64D8'
     }
   },
+
+
   components: {
     MuiLink: {
       defaultProps: {
@@ -21,7 +23,7 @@ export const lightTheme = createTheme({
     MuiAppBar: {
       defaultProps: {
         elevation: 0,
-        position: 'fixed',
+        position: 'fixed',        
       },
       styleOverrides: {
         root: {
@@ -84,9 +86,12 @@ export const lightTheme = createTheme({
         root: {
           boxShadow: '0px 5px 5px rgba(0,0,0,0.05)',
           borderRadius: '10px',
+          margin: 0,
+          padding: 0
         }
       }
-    }
+    },    
+
 
   }
 });

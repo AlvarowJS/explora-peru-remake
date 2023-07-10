@@ -41,7 +41,7 @@ export const ExploraLayout: FC<Props> = ({ children, title, pageDescription, ima
             />
 
             <main style={{
-                margin: '80px auto',
+                margin: '80px 0',
                 // maxWidth: ' 1440px',
                 // padding: '0px 30px'
             }}>
