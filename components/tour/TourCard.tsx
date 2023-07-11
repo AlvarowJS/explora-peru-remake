@@ -1,11 +1,16 @@
 import { toursList } from '@/interfaces'
 import { Box, Button, Card, CardMedia, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import React, { FC } from 'react'
 interface Props {
     tour: toursList
 }
 export const TourCard: FC<Props> = ({ tour }) => {
+    const router = useRouter();
+    const verTour = () => {
+        router.push(`tour/${tour.id}`)
+    }
     return (
         <Grid container key={tour.id} paddingY={4}>
             <Grid item container xs={12} sm={6} md={3} >
@@ -23,15 +28,17 @@ export const TourCard: FC<Props> = ({ tour }) => {
                 <Typography variant='h4' component='h4' sx={{ color: '#E89241', fontSize: 20 }}>{tour.titulo}</Typography>
                 <div
                     style={{
-                        maxHeight: '120px', 
-                        overflowY: 'auto', 
+                        maxHeight: '120px',
+                        overflowY: 'auto',
                     }}
                 >
                     <Typography>{tour.descripcion_spanish}</Typography>
                 </div>
             </Grid>
             <Grid item container xs={12} sm={6} md={3} alignItems="center">
-                <Button style={{ color: 'white', backgroundColor: '#E89241' }}>
+                <Button style={{ color: 'white', backgroundColor: '#E89241' }}
+                    onClick={verTour}
+                >
                     Mas información
                 </Button>
             </Grid>

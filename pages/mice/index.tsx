@@ -5,6 +5,8 @@ import Image from 'next/image'
 const Mice = () => {
   return (
     <ExploraLayout title={"Circuitos"} pageDescription={"Circuitos disponibles"}>
+
+      
       <Box position="relative" width="100%">
         <CardMedia
           component="img"

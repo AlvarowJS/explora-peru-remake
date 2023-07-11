@@ -2,11 +2,16 @@ import { toursList } from '@/interfaces'
 import { circuitoList } from '@/interfaces/circuitoList'
 import { Box, Button, Card, CardMedia, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import React, { FC } from 'react'
 interface Props {
     circuito: circuitoList
 }
 export const CircuitoCard: FC<Props> = ({ circuito }) => {
+    const router = useRouter();
+    const verCircuito = () => {
+        router.push(`circuito/${circuito.id}`)
+    }
     return (
         <Grid container key={circuito.id} paddingY={4}>
             <Grid item container xs={12} sm={6} md={3} >
@@ -24,15 +29,17 @@ export const CircuitoCard: FC<Props> = ({ circuito }) => {
                 <Typography variant='h4' component='h4' sx={{ color: '#E89241', fontSize: 20 }}>{circuito.titulo}</Typography>
                 <div
                     style={{
-                        maxHeight: '120px', 
-                        overflowY: 'auto', 
+                        maxHeight: '120px',
+                        overflowY: 'auto',
                     }}
                 >
                     <Typography>{circuito.duracion}</Typography>
                 </div>
             </Grid>
             <Grid item container xs={12} sm={6} md={3} alignItems="center">
-                <Button style={{ color: 'white', backgroundColor: '#E89241' }}>
+                <Button style={{ color: 'white', backgroundColor: '#E89241' }}
+                    onClick={verCircuito}
+                >
                     Mas información
                 </Button>
             </Grid>

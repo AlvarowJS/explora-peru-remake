@@ -1,9 +1,11 @@
 import React from 'react'
 import { ExploraLayout } from '@/components/layouts'
+import { FieldValues, useForm } from 'react-hook-form'
 import { Button, Grid, Typography, Box, InputLabel, FormControl, OutlinedInput, TextField } from '@mui/material'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import axios from 'axios'
+import Image from 'next/image'
 const MySwal = withReactContent(Swal)
 const URL = 'http://127.0.0.1:8000/api/v1/noticias';
 interface FormData {
@@ -13,7 +15,7 @@ interface FormData {
     mensaje: string;
 }
 
-export const Contactenos = () => {
+const Contactenos = () => {
     const defaultForm = {
         nombre: '',
         email: '',
@@ -40,7 +42,18 @@ export const Contactenos = () => {
     }
     return (
         <ExploraLayout title={"Circuitos"} pageDescription={"Circuitos disponibles"}>
+
             <Grid container spacing={4}>
+                <Grid item md={6}>
+                    <div style={{ position: 'relative', cursor: 'pointer', width: '100%', height: '500px', overflow: 'hidden' }} >
+                        <Image
+                            src="/contacto.png"
+                            alt="foto contacto"
+                            layout="fill"
+                            objectFit="cover"
+                        />
+                    </div>
+                </Grid>
                 <Grid item md={6}>
                     <Typography variant='h1' fontSize={50}>Contáctanos</Typography>
                     <Typography >¿Estás interesado en nuestros servicios?
@@ -81,10 +94,10 @@ export const Contactenos = () => {
                         </Button>
                     </form>
                 </Grid>
-                <Grid item md={6}>
 
-                </Grid>
             </Grid>
         </ExploraLayout >
     )
 }
+
+export default Contactenos

@@ -1,5 +1,6 @@
 import { Box, Divider, Drawer, IconButton, Input, InputAdornment, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from "@mui/material"
 import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, ConfirmationNumberOutlined, EscalatorWarningOutlined, FemaleOutlined, LoginOutlined, MaleOutlined, SearchOutlined, VpnKeyOutlined } from "@mui/icons-material"
+import NextLink from 'next/link';
 import React from 'react';
 
 type Props = {
@@ -31,13 +32,17 @@ export const SideMenu: React.FC<Props> = ({ menu, setMenu }) => {
                         <ListItemText primary={'Home'} />
                     </ListItem>
 
-                    <ListItem button>
-                        <ListItemText primary={'Tours'} />
-                    </ListItem>
+                    <NextLink href='/tour' passHref legacyBehavior>
+                        <ListItem button>
+                            <ListItemText primary={'Tours'} />
+                        </ListItem>
+                    </NextLink>
 
-                    <ListItem button >
-                        <ListItemText primary={'Circuitos'} />
-                    </ListItem>
+                    <NextLink href='/circuitos' passHref legacyBehavior>
+                        <ListItem button >
+                            <ListItemText primary={'Circuitos'} />
+                        </ListItem>
+                    </NextLink>
 
                     <ListItem button >
                         <ListItemText primary={'Mice'} />
