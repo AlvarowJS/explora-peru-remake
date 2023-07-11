@@ -37,9 +37,9 @@ const Mice = () => {
         <Typography variant='h1' component='h1' sx={{ color: '#E89241' }}>MICE</Typography>
       </Box>
 
-      <Grid container>
+      <Grid container spacing={4}>
         <Grid item xs={12} md={6} lg={6}>
-          <div style={{ position: 'relative', marginTop: '10px', marginLeft: 50, marginBottom: 30, width: '80%', height: '200px', borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
               src='/foto_mice.png'
               alt='mice imagen'
@@ -47,7 +47,7 @@ const Mice = () => {
               objectFit="cover"
             />
           </div>
-          <div style={{ position: 'relative', marginTop: '10px', marginLeft: 50, marginBottom: 30, width: '80%', height: '200px', borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
               src='/foto_mice.png'
               alt='mice imagen'
@@ -98,7 +98,7 @@ const Mice = () => {
       <Grid container>
         <Grid item md={3}></Grid>
         <Grid item md={6}>
-          <div style={{ position: 'relative', marginTop: '10px', marginLeft: 50, marginBottom: 30, width: '400px', height: '200px', borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', marginTop: '10px',  marginBottom: 30, width: '100%', height: '400px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
               src='/foto_mice.png'
               alt='mice imagen'
@@ -125,10 +125,10 @@ const Mice = () => {
         </Grid>
         <Grid item md={1}></Grid>
       </Grid>
-      <Grid container>
+      <Grid container spacing={4}>
         <Grid item md={2}></Grid>
         <Grid item xs={12} md={4}>
-          <div style={{ position: 'relative', marginTop: '10px', marginLeft: 50, marginBottom: 30, width: '80%', height: '200px', borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
               src='/foto_mice.png'
               alt='mice imagen'
@@ -138,7 +138,7 @@ const Mice = () => {
           </div>
         </Grid>
         <Grid item xs={12} md={4}>
-          <div style={{ position: 'relative', marginTop: '10px', marginLeft: 50, marginBottom: 30, width: '80%', height: '200px', borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
               src='/foto_mice.png'
               alt='mice imagen'
@@ -167,9 +167,9 @@ const Mice = () => {
         <Grid item md={1}></Grid>
       </Grid>
 
-      <Grid container>
+      <Grid container spacing={4}>
         <Grid item xs={12} md={4}>
-          <div style={{ position: 'relative', marginTop: '10px', marginLeft: 50, marginBottom: 30, width: '80%', height: '200px', borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
               src='/foto_mice.png'
               alt='mice imagen'
@@ -179,7 +179,7 @@ const Mice = () => {
           </div>
         </Grid>
         <Grid item xs={12} md={4}>
-          <div style={{ position: 'relative', marginTop: '10px', marginLeft: 50, marginBottom: 30, width: '80%', height: '200px', borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
               src='/foto_mice.png'
               alt='mice imagen'
@@ -189,7 +189,7 @@ const Mice = () => {
           </div>
         </Grid>
         <Grid item xs={12} md={4}>
-          <div style={{ position: 'relative', marginTop: '10px', marginLeft: 50, marginBottom: 30, width: '80%', height: '200px', borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
               src='/foto_mice.png'
               alt='mice imagen'
@@ -200,16 +200,16 @@ const Mice = () => {
         </Grid>
       </Grid>
 
-      <Box sx={{ display: 'flex', marginTop: 8, gap: 3 }}>
+      <Box marginY={5} sx={{ display: 'flex', marginTop: 8, gap: 3 }}>
         <Box sx={{ width: 120, height: 40, backgroundColor: '#E89241	' }}>
 
         </Box>
         <Typography variant='h1' component='h1' sx={{ color: '#E89241	' }}>UNIENDO SENTIMIENTOS</Typography>
       </Box>
 
-      <Grid container>
-        <Grid xs={12} md={4}>
-          <div style={{ position: 'relative', marginTop: '10px', marginLeft: 50, marginBottom: 30, width: '80%', height: '200px', borderRadius: '20px', overflow: 'hidden' }}>
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={4}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
               src='/foto_mice.png'
               alt='mice imagen'
@@ -218,13 +218,13 @@ const Mice = () => {
             />
           </div>
         </Grid>
-        <Grid xs={12} md={4}>
+        <Grid item xs={12} md={4}>
           <Typography marginY={3} variant="h4" sx={{ fontSize: 20 }}>
             Viajes basados en algún interés especial, inspirado en un tema, experiencias únicas. 100% Tailored made, propuestas que cumplan con los deseos de los clientes. Estos pueden ser educativos, ecológicos, gastronómicos, aventura, deportivos (Futbol, Maratones, Yoga), vivenciales.
           </Typography>
         </Grid>
-        <Grid xs={12} md={4}>
-          <div style={{ position: 'relative', marginTop: '10px', marginLeft: 50, marginBottom: 30, width: '80%', height: '200px', borderRadius: '20px', overflow: 'hidden' }}>
+        <Grid item xs={12} md={4}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
               src='/foto_mice.png'
               alt='mice imagen'

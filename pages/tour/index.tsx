@@ -9,18 +9,18 @@ import { TourCard } from '@/components/tour/TourCard'
 import { GetStaticProps, NextPage } from 'next'
 
 interface Props {
-  tours: toursList;
+  tours: Array<toursList>;
 }
 
 const Tours: NextPage<Props> = ({ tours }) => {
 
   const [filter, setFilter] = useState('');
   const [searchText, setSearchText] = useState('');
-  const filteredTours = tours?.filter(e => {
+  const filteredTours = tours?.filter((e: toursList )=> {
     return (
-      e.titulo.toLowerCase().indexOf(searchText?.toLowerCase()) !== -1
+      e?.titulo?.toLowerCase().indexOf(searchText?.toLowerCase()) !== -1
       ||
-      e.titulo.toLowerCase().indexOf(filter?.toLowerCase()) !== -1
+      e?.titulo?.toLowerCase().indexOf(filter?.toLowerCase()) !== -1
     )
   });
 

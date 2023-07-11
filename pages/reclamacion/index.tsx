@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { FieldValues, useForm } from 'react-hook-form'
 import { ExploraLayout } from '@/components/layouts'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -46,7 +46,7 @@ const Reclamaciones = () => {
     telefono: ''
   }
   const { handleSubmit, register, reset, watch } = useForm()
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FieldValues) => {
 
     return MySwal.fire({
       title: '¿Estás seguro de enviar el reclamo?',

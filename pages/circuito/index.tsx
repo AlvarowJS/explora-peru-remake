@@ -10,7 +10,7 @@ import { circuitoList } from '@/interfaces/circuitoList'
 import { CircuitoCard } from '@/components/circuito/CircuitoCard'
 
 interface Props {
-  circuitos: circuitoList;
+  circuitos: Array<circuitoList>;
 }
 
 const Circuitos: NextPage<Props> = ({ circuitos }) => {
