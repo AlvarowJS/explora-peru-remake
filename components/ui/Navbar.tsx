@@ -4,7 +4,6 @@ import { AppBar, Box, Button, Link, Switch, Toolbar, Typography } from '@mui/mat
 import Image from 'next/image';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useDispatch, useSelector } from 'react-redux';
 type Props = {
     setMenu: (value: boolean) => void;
     menu: boolean;
@@ -74,18 +73,16 @@ export const Navbar: React.FC<Props> = ({ setMenu, menu }) => {
                 <Box flex={1} />
                 <Box sx={{ color: 'white', fontFamily: 'Roboto', marginRight: 2 }}>
                     Es
-                    <Switch
-                        checked={switchState}
-                        onChange={handleSwitchChange}
+                    <Switch                       
                         color='primary'
                     />
                     Us
                 </Box>
                 <Box>
-                    <MenuIcon onClick={handleMenuToggle} sx={{ color: 'white', fontSize: 30 }} />
+                    <MenuIcon onClick={handleMenuToggle} sx={{ color: 'white', fontSize: 30, cursor: 'pointer' }} />
                 </Box>
                 <Box>
-                    <PersonIcon onClick={intranet} sx={{ color: 'white', fontSize: 30 }} />
+                    <PersonIcon onClick={intranet} sx={{ color: 'white', fontSize: 30, cursor: 'pointer' }} />
                 </Box>
 
 

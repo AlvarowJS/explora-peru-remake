@@ -19,7 +19,6 @@ export const ExploraLayout: FC<Props> = ({ children, title, pageDescription, ima
             <Head>
                 <title>{title}</title>
                 <meta name='description' content={pageDescription} />
-
                 <meta name='og:title' content={title} />
                 <meta name='og:description' content={pageDescription} />
                 {

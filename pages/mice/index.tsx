@@ -43,7 +43,7 @@ const Mice = () => {
         <Grid item xs={12} md={6} lg={6}>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
-              src='/foto_mice.png'
+              src='/sinimagen.png'
               alt='mice imagen'
               layout="fill"
               objectFit="cover"
@@ -51,7 +51,7 @@ const Mice = () => {
           </div>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
-              src='/foto_mice.png'
+              src='/sinimagen.png'
               alt='mice imagen'
               layout="fill"
               objectFit="cover"
@@ -102,7 +102,7 @@ const Mice = () => {
         <Grid item md={6}>
           <div style={{ position: 'relative', marginTop: '10px',  marginBottom: 30, width: '100%', height: '400px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
-              src='/foto_mice.png'
+              src='/sinimagen.png'
               alt='mice imagen'
               layout="fill"
               objectFit="cover"
@@ -132,7 +132,7 @@ const Mice = () => {
         <Grid item xs={12} md={4}>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
-              src='/foto_mice.png'
+              src='/sinimagen.png'
               alt='mice imagen'
               layout="fill"
               objectFit="cover"
@@ -142,7 +142,7 @@ const Mice = () => {
         <Grid item xs={12} md={4}>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
-              src='/foto_mice.png'
+              src='/sinimagen.png'
               alt='mice imagen'
               layout="fill"
               objectFit="cover"
@@ -173,7 +173,7 @@ const Mice = () => {
         <Grid item xs={12} md={4}>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
-              src='/foto_mice.png'
+              src='/sinimagen.png'
               alt='mice imagen'
               layout="fill"
               objectFit="cover"
@@ -183,7 +183,7 @@ const Mice = () => {
         <Grid item xs={12} md={4}>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
-              src='/foto_mice.png'
+              src='/sinimagen.png'
               alt='mice imagen'
               layout="fill"
               objectFit="cover"
@@ -193,7 +193,7 @@ const Mice = () => {
         <Grid item xs={12} md={4}>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
-              src='/foto_mice.png'
+              src='/sinimagen.png'
               alt='mice imagen'
               layout="fill"
               objectFit="cover"
@@ -213,7 +213,7 @@ const Mice = () => {
         <Grid item xs={12} md={4}>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
-              src='/foto_mice.png'
+              src='/sinimagen.png'
               alt='mice imagen'
               layout="fill"
               objectFit="cover"
@@ -228,7 +228,7 @@ const Mice = () => {
         <Grid item xs={12} md={4}>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <Image
-              src='/foto_mice.png'
+              src='/sinimagen.png'
               alt='mice imagen'
               layout="fill"
               objectFit="cover"
