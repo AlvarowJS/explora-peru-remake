@@ -12,27 +12,27 @@ export const NoticiaCard: FC<Props> = ({ noticia }) => {
         router.push(`noticias/${noticia.id}`)
     }
     return (
-        <Grid container key={noticia.id} paddingY={4} spacing={4} >
-            <Grid item xs={12} md={4} textAlign='center'>
-                <div style={{ position: 'relative', cursor: 'pointer', width: '100%', height: '300px', borderRadius: '10px', overflow: 'hidden' }}>
-                    <Image
-                        // src="/ica_filtro.png"
-                        src={`https://backend.peruexploring.pe/public/storage/noticias/${noticia.titulo}/${noticia.img}`}
-                        alt="logo Peru Exploring"
-                        layout="fill"
-                        objectFit="cover"
-                    />
-                </div>
-                <Typography>{noticia.titulo}</Typography>
+        // <Grid container key={noticia.id} paddingY={4} spacing={4} >
+        <Grid item xs={6} md={4} textAlign='center'>
+            <div style={{ position: 'relative', cursor: 'pointer', width: '100%', height: '300px', borderRadius: '10px', overflow: 'hidden' }}>
+                <Image
+                    // src="/ica_filtro.png"
+                    src={`https://backend.peruexploring.pe/public/storage/noticias/${noticia.titulo}/${noticia.img}`}
+                    alt="logo Peru Exploring"
+                    layout="fill"
+                    objectFit="cover"
+                />
+            </div>
+            <Typography>{noticia.titulo}</Typography>
 
-                <Typography>{noticia.nota}</Typography>
+            <Typography>{noticia.nota}</Typography>
 
-                <Button style={{ color: 'white', backgroundColor: '#E89241' }}
-                    onClick={ verNoticia }
-                >
-                    Mas información
-                </Button>
-            </Grid>
+            <Button style={{ color: 'white', backgroundColor: '#E89241' }}
+                onClick={verNoticia}
+            >
+                Mas información
+            </Button>
         </Grid>
+        // </Grid>
     )
 }

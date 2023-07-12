@@ -4,6 +4,8 @@ const nextConfig = {
   images: {
     domains: ['backend.peruexploring.pe'],
   },
+  target: 'server', // Agrega esta línea
+
 }
 
 module.exports = nextConfig

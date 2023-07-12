@@ -38,13 +38,13 @@ const Noticias: NextPage<Props> = ({ noticias }) => {
                 </Box>
             </Box>
 
-            <Grid container spacing={4} margin={10}>
+            <Grid container spacing={4} marginY={5}>
                 {
                     noticias?.map((noticia: NoticiasList) => (
                         <NoticiaCard key={noticia.id} noticia={noticia} />
                     ))
                 }
-
+            
             </Grid>
         </ExploraLayout>
     )
