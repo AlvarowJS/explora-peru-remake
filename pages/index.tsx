@@ -12,7 +12,7 @@ import { Label } from '@mui/icons-material'
 const inter = Inter({ subsets: ['latin'] })
 import { useForm } from 'react-hook-form';
 import axios from 'axios'
-const URL = 'http://127.0.0.1:8000/api/v1/contactenos';
+const URL = 'https://backend.peruexploring.pe/public/api/v1/contactenos';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { useEffect, useState } from 'react'

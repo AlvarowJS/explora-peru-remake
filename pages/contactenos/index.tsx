@@ -7,7 +7,7 @@ import withReactContent from 'sweetalert2-react-content'
 import axios from 'axios'
 import Image from 'next/image'
 const MySwal = withReactContent(Swal)
-const URL = 'http://127.0.0.1:8000/api/v1/noticias';
+const URL = 'https://backend.peruexploring.pe/public/api/v1/noticias';
 interface FormData {
     nombre: string;
     email: string;
