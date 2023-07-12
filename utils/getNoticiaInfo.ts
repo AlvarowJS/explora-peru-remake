@@ -9,11 +9,11 @@ export const getNoticiaInfo = async( id: string ) => {
         const { data } = await noticiasBD.get<NoticiasList>(`/${ id }`);
 
         return {
-            id: data.id,
-            titulo: data.titulo,
-            nota: data.nota,
-            nota_ingles: data.nota_ingles,            
-            img: data.img
+            id: data.id || null,
+            titulo: data.titulo || null,
+            nota: data.nota || null,
+            nota_ingles: data.nota_ingles || null,
+            img: data.img || null
         }
         
     } catch (error) {

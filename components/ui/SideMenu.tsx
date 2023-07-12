@@ -27,34 +27,40 @@ export const SideMenu: React.FC<Props> = ({ menu, setMenu }) => {
 
                 <List>
 
+                    <NextLink href='/' passHref legacyBehavior onClick={handleBackdropClick}>
+                        <ListItem button>
+                            <ListItemText primary={'Home'} />
+                        </ListItem>
+                    </NextLink>
 
-                    <ListItem button>
-                        <ListItemText primary={'Home'} />
-                    </ListItem>
-
-                    <NextLink href='/tour' passHref legacyBehavior>
+                    <NextLink href='/tour' passHref legacyBehavior onClick={handleBackdropClick}>
                         <ListItem button>
                             <ListItemText primary={'Tours'} />
                         </ListItem>
                     </NextLink>
 
-                    <NextLink href='/circuitos' passHref legacyBehavior>
+                    <NextLink href='/circuito' passHref legacyBehavior onClick={handleBackdropClick}>
                         <ListItem button >
                             <ListItemText primary={'Circuitos'} />
                         </ListItem>
                     </NextLink>
+                    <NextLink href='/mice' passHref legacyBehavior onClick={handleBackdropClick}>
+                        <ListItem button >
+                            <ListItemText primary={'Mice'} />
+                        </ListItem>
+                    </NextLink>
 
-                    <ListItem button >
-                        <ListItemText primary={'Mice'} />
-                    </ListItem>
+                    <NextLink href='/noticias' passHref legacyBehavior onClick={handleBackdropClick}>
+                        <ListItem button >
+                            <ListItemText primary={'Noticias'} />
+                        </ListItem>
+                    </NextLink>
 
-                    <ListItem button >
-                        <ListItemText primary={'Noticias'} />
-                    </ListItem>
-
-                    <ListItem button >
-                        <ListItemText primary={'Contáctenos'} />
-                    </ListItem>
+                    <NextLink href='/contactenos' passHref legacyBehavior onClick={handleBackdropClick}>
+                        <ListItem button >
+                            <ListItemText primary={'Contáctenos'} />
+                        </ListItem>
+                    </NextLink>
                 </List>
             </Box>
         </Drawer>

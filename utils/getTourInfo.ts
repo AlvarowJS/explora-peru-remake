@@ -9,16 +9,16 @@ export const getTourInfo = async( id: string ) => {
         const { data } = await toursBD.get<toursList>(`/${ id }`);
 
         return {
-            id: data.id,
-            titulo: data.titulo,
-            descripcion_spanish: data.descripcion_spanish,
-            descripcion_english: data.descripcion_english,
-            archivo_spanish: data.archivo_spanish,
-            archivo_english: data.archivo_english,
-            incluye_spanish: data.incluye_spanish,
-            incluye_english: data.incluye_english,
-            duracion: data.duracion,
-            img: data.img
+            id: data.id || null,
+            titulo: data.titulo || null,
+            descripcion_spanish: data.descripcion_spanish || null,
+            descripcion_english: data.descripcion_english || null,
+            archivo_spanish: data.archivo_spanish || null,
+            archivo_english: data.archivo_english || null,
+            incluye_spanish: data.incluye_spanish || null,
+            incluye_english: data.incluye_english || null,
+            duracion: data.duracion || null,
+            img: data.img || null
         }
         
     } catch (error) {

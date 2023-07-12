@@ -15,6 +15,7 @@ import axios from 'axios'
 const URL = 'http://127.0.0.1:8000/api/v1/contactenos';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import { useEffect, useState } from 'react'
 const MySwal = withReactContent(Swal)
 
 interface FormData {
@@ -24,7 +25,7 @@ interface FormData {
   mensaje: string;
 }
 
-export default function Home() {
+export default function Home() {  
 
   const handleDescargarProtegeme = () => {
     window.open('./Responsable/afiche_esnna.pdf', '_blank');

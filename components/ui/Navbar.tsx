@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NextLink from 'next/link';
-import { AppBar, Box, Button, Link, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Button, Link, Switch, Toolbar, Typography } from '@mui/material'
 import Image from 'next/image';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useDispatch, useSelector } from 'react-redux';
 type Props = {
     setMenu: (value: boolean) => void;
     menu: boolean;
 };
 
 export const Navbar: React.FC<Props> = ({ setMenu, menu }) => {
-    const intranet = () => {        
+    const intranet = () => {
         window.open('https://agentes.peruexploring.pe/', '_blank');
     }
     const handleMenuToggle = () => {
-        setMenu(!menu); // Ejemplo de cómo actualizar el estado 'menu'
+        setMenu(!menu);
     };
+    
+
+
     return (
         <AppBar>
             <Toolbar>
@@ -68,6 +72,15 @@ export const Navbar: React.FC<Props> = ({ setMenu, menu }) => {
 
                 <Box flex={1} />
                 <Box flex={1} />
+                <Box sx={{ color: 'white', fontFamily: 'Roboto', marginRight: 2 }}>
+                    Es
+                    <Switch
+                        checked={switchState}
+                        onChange={handleSwitchChange}
+                        color='primary'
+                    />
+                    Us
+                </Box>
                 <Box>
                     <MenuIcon onClick={handleMenuToggle} sx={{ color: 'white', fontSize: 30 }} />
                 </Box>

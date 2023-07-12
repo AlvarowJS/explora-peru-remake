@@ -43,9 +43,9 @@ const Contactenos = () => {
     return (
         <ExploraLayout title={"Circuitos"} pageDescription={"Circuitos disponibles"}>
 
-            <Grid container spacing={4}>
-                <Grid item md={6}>
-                    <div style={{ position: 'relative', cursor: 'pointer', width: '100%', height: '500px', overflow: 'hidden' }} >
+            <Grid container spacing={4} padding={10}>
+                <Grid item xs={12} md={6}>
+                    <div style={{ position: 'relative', cursor: 'pointer', width: '100%', height: '500px' }} >
                         <Image
                             src="/contacto.png"
                             alt="foto contacto"
@@ -54,7 +54,7 @@ const Contactenos = () => {
                         />
                     </div>
                 </Grid>
-                <Grid item md={6}>
+                <Grid item xs={12} md={6}>
                     <Typography variant='h1' fontSize={50}>Contáctanos</Typography>
                     <Typography >¿Estás interesado en nuestros servicios?
                         Escríbenos</Typography>
