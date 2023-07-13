@@ -32,7 +32,7 @@ export const Navbar: React.FC<Props> = ({ setMenu, menu }) => {
                     {/* <Typography variant='h6'>Perú Exploring</Typography> */}
                 </NextLink>
                 <Box flex={1} />
-                <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
+                <Box sx={{ display: { xs: 'none', sm: 'none', md: 'none', lg: 'block' } }}>
                     <NextLink href='/' passHref legacyBehavior>
                         <Link>
                             <Button>Sobre nosotros</Button>

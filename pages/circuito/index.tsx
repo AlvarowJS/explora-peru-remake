@@ -4,7 +4,7 @@ import { Box, Button, Card, CardMedia, FormControl, FormGroup, FormHelperText, G
 import Image from 'next/image'
 import { Search } from '@mui/icons-material'
 import { TourCard } from '@/components/tour/TourCard'
-import { GetStaticProps, NextPage } from 'next'
+import { GetServerSideProps, GetStaticProps, NextPage } from 'next'
 import circuitoBD from '@/api/circuitoBD'
 import { circuitoList } from '@/interfaces/circuitoList'
 import { CircuitoCard } from '@/components/circuito/CircuitoCard'
@@ -128,7 +128,7 @@ const Circuitos: NextPage<Props> = ({ circuitos }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   const { data } = await circuitoBD.get<circuitoList>('');
 

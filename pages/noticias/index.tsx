@@ -2,7 +2,7 @@ import React from 'react'
 import { ExploraLayout } from '@/components/layouts'
 import { Box, Button, Card, CardMedia, FormControl, FormGroup, FormHelperText, Grid, IconButton, Input, InputAdornment, InputLabel, OutlinedInput, TextField, TextareaAutosize, Typography } from '@mui/material'
 import { NoticiaCard } from '@/components/noticia/NoticiaCard'
-import { GetStaticProps, NextPage } from 'next'
+import { GetServerSideProps, GetStaticProps, NextPage } from 'next'
 import noticiasBD from '@/api/noticiasBD'
 import { NoticiasList } from '@/interfaces'
 
@@ -49,7 +49,7 @@ const Noticias: NextPage<Props> = ({ noticias }) => {
         </ExploraLayout>
     )
 }
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
     const { data } = await noticiasBD.get<NoticiasList>('');
 

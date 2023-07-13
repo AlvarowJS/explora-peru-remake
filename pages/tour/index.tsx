@@ -6,7 +6,7 @@ import { Search } from '@mui/icons-material'
 import toursBD from '@/api/toursBD'
 import { toursList } from '@/interfaces'
 import { TourCard } from '@/components/tour/TourCard'
-import { GetStaticProps, NextPage } from 'next'
+import { GetServerSideProps, GetStaticProps, NextPage } from 'next'
 
 interface Props {
   tours: Array<toursList>;
@@ -127,7 +127,7 @@ const Tours: NextPage<Props> = ({ tours }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   const { data } = await toursBD.get<toursList>('');
 
